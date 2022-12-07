@@ -11,9 +11,9 @@ export type currencyTypes = Record<currencyEnum, string | number>
 export type walletDTO = { walletId: string } & Partial<currencyTypes>
 
 export type userDTO = {
-  userId: string
-  firstname: string
-  lastname: string
+  userId: NonNullable<string>
+  firstname: Capitalize<string>
+  lastname: Capitalize<string>
   Wallet?: walletDTO
 }
 
@@ -33,7 +33,7 @@ export type playerDTO = Partial<userDTO> & Pick<userDTO, "userId"> & { gamerLeve
 
 const playerOne: playerDTO = {
   userId: "297397",
-  firstname: "Beth",
+  firstname: " Beth",
   lastname: "Greene",
   gamerLevel: 12
 }
@@ -48,7 +48,7 @@ const playerTwo: playerDTO = {
   lastname: "Rhee",
   // previousOccupation: "pizza delivery",
   gamerLevel: 3
-} as playerDTO
+}
 
 console.log(playerTwo)
 
