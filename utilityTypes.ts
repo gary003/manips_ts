@@ -22,7 +22,7 @@ const us: userDTO = {
   firstname: "",
   lastname: "",
   Wallet: {
-    walletId: "azzr",
+    walletId: "0293823",
     hardCurrency: 123
   }
 }
@@ -57,34 +57,30 @@ const characteres: playerDTO[] = [
     userId: "1209876",
     firstname: "Beth",
     lastname: "Greene",
-    // previousOccupation: "pizza delivery",
     gamerLevel: 13
   },
   {
     userId: "63536282",
     firstname: "Glen",
     lastname: "Rhee",
-    // previousOccupation: "pizza delivery",
     gamerLevel: 10
   },
   {
     userId: "09128373",
     firstname: "Carl",
     lastname: "Grimes",
-    // previousOccupation: "pizza delivery",
     gamerLevel: 3
   },
   {
     userId: "298373633",
     firstname: "Rosita",
-    lastname: "espinosa",
-    // previousOccupation: "pizza delivery",
+    lastname: "Espinosa",
     gamerLevel: 14
   }
 ]
 
 const getTopPlayer = (players: playerDTO[]) => {
-  return players.reduce((acc, player) => {
+  return players.reduce((acc: playerDTO, player: playerDTO) => {
     return player.gamerLevel > acc.gamerLevel ? player : acc
   })
 }
