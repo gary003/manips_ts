@@ -88,3 +88,23 @@ const getTopPlayer = (players: playerDTO[]) => {
 console.log(getTopPlayer(characteres))
 
 export type getTopPlayerType = ReturnType<typeof getTopPlayer>
+
+export enum racesEnum {
+  TRACK100M = "track_100m",
+  TRACK200M = "track_200m",
+  TRACK400M = "track_400m",
+  TRACK800M = "track_800m"
+}
+
+export type racesType = Record<racesEnum, boolean>
+
+export type athlete = userDTO & { races: racesEnum[] }
+
+const athlete1: athlete = {
+  userId: "1234-5152-7182893",
+  firstname: "Leo",
+  lastname: "Mati",
+  races: [racesEnum.TRACK100M]
+}
+
+console.log(athlete1)
